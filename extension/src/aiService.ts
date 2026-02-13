@@ -5,10 +5,10 @@ export class AIService {
 
   constructor() {
     // Use the BugSight backend API
+    // Production URL:
+    this.apiUrl = 'https://bug-sight-web.vercel.app/api/analyze'
     // For local testing:
-    this.apiUrl = 'http://localhost:3000/api/analyze'
-    // For production (after deployment):
-    // this.apiUrl = 'https://bugsight.dev/api/analyze'
+    // this.apiUrl = 'http://localhost:3000/api/analyze'
   }
 
   async explainError(errorText: string): Promise<any> {
