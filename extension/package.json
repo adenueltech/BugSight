@@ -1,0 +1,98 @@
+{
+  "name": "bugsight-vscode",
+  "displayName": "BugSight",
+  "description": "AI-powered error explanation and debugging assistant",
+  "version": "1.0.0",
+  "publisher": "bugsight",
+  "author": {
+    "name": "Adenuel",
+    "url": "https://github.com/adenueltech"
+  },
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adenueltech/bugsight"
+  },
+  "bugs": {
+    "url": "https://github.com/adenueltech/bugsight/issues"
+  },
+  "homepage": "https://github.com/adenueltech/bugsight#readme",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bugsight.explainError",
+        "title": "BugSight: Explain Error"
+      },
+      {
+        "command": "bugsight.explainSelection",
+        "title": "Explain with BugSight"
+      },
+      {
+        "command": "bugsight.showHistory",
+        "title": "BugSight: Show Error History"
+      },
+      {
+        "command": "bugsight.clearHistory",
+        "title": "BugSight: Clear History"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "bugsight.explainSelection",
+          "when": "editorHasSelection",
+          "group": "bugsight@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "BugSight",
+      "properties": {
+        "bugsight.autoExplain": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically explain errors when detected"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "bugsight",
+          "title": "BugSight",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "bugsight": [
+        {
+          "id": "bugsightHistory",
+          "name": "Error History"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.0"
+  }
+}

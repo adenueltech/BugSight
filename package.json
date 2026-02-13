@@ -1,0 +1,19 @@
+{
+  "name": "bugsight",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "web",
+    "extension",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev:web": "cd web && npm run dev",
+    "dev:extension": "cd extension && npm run watch",
+    "dev:backend": "cd backend && npm run dev",
+    "build:web": "cd web && npm run build",
+    "build:extension": "cd extension && npm run compile",
+    "build:all": "npm run build:web && npm run build:extension"
+  }
+}
