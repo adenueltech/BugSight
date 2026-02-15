@@ -46,13 +46,13 @@ export default function LandingPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
-        {/* Animated background */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+        {/* Subtle background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse" />
-          <div className="absolute w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse" />
+          <div className="absolute w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl -top-48 -left-48" />
+          <div className="absolute w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl -bottom-48 -right-48" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
@@ -61,14 +61,14 @@ export default function LandingPage() {
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
-            className="flex justify-center mb-8"
+            className="flex justify-center mb-6 md:mb-8"
           >
             <Image 
               src="/logo.svg" 
               alt="BugSight Logo" 
-              width={120} 
-              height={120}
-              className="drop-shadow-2xl"
+              width={100} 
+              height={100}
+              className="w-20 h-20 md:w-28 md:h-28"
             />
           </motion.div>
 
@@ -77,7 +77,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-6xl md:text-8xl font-bold mb-6 neon-text"
+            className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-6"
           >
             <span className="text-neon-blue">Bug</span>
             <span className="text-neon-purple">Sight</span>
@@ -88,7 +88,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto"
+            className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-3 md:mb-4 max-w-3xl mx-auto px-4"
           >
             Know Your Bugs. Fix Them Faster.
           </motion.p>
@@ -97,7 +97,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+            className="text-base md:text-lg text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto px-4"
           >
             AI-powered error analysis that turns cryptic stack traces into clear solutions. 
             Debug smarter, not harder.
@@ -108,11 +108,11 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <Link href="/app">
               <motion.button
-                className="px-8 py-4 bg-neon-blue text-black font-bold rounded-lg text-lg flex items-center gap-2 neon-border hover:bg-neon-blue/90 transition-all"
+                className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-neon-blue text-black font-bold rounded-lg text-base md:text-lg flex items-center justify-center gap-2 hover:bg-neon-blue/90 transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -123,7 +123,7 @@ export default function LandingPage() {
 
             <Link href="/app">
               <motion.button
-                className="px-8 py-4 bg-transparent border-2 border-neon-purple text-neon-purple font-bold rounded-lg text-lg hover:bg-neon-purple/10 transition-all"
+                className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-neon-purple text-neon-purple font-bold rounded-lg text-base md:text-lg hover:bg-neon-purple/10 transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -137,19 +137,19 @@ export default function LandingPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="mt-12 md:mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto px-4"
           >
             <div>
-              <div className="text-3xl font-bold text-neon-blue">Fast</div>
-              <div className="text-sm text-gray-400">Instant Analysis</div>
+              <div className="text-2xl md:text-3xl font-bold text-neon-blue">Fast</div>
+              <div className="text-xs md:text-sm text-gray-400">Instant Analysis</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-neon-purple">Private</div>
-              <div className="text-sm text-gray-400">No Accounts</div>
+              <div className="text-2xl md:text-3xl font-bold text-neon-purple">Private</div>
+              <div className="text-xs md:text-sm text-gray-400">No Accounts</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-neon-green">Smart</div>
-              <div className="text-sm text-gray-400">AI-Powered</div>
+              <div className="text-2xl md:text-3xl font-bold text-neon-green">Smart</div>
+              <div className="text-xs md:text-sm text-gray-400">AI-Powered</div>
             </div>
           </motion.div>
         </div>
@@ -159,7 +159,7 @@ export default function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, repeat: Infinity, duration: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
         >
           <div className="w-6 h-10 border-2 border-neon-blue rounded-full flex justify-center">
             <motion.div

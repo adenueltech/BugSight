@@ -18,9 +18,9 @@ export default function AppPage() {
       <Header />
       
       {/* Navigation Tabs */}
-      <div className="container mx-auto px-4 pt-24">
+      <div className="container mx-auto px-4 pt-20 md:pt-24">
         <motion.div 
-          className="flex gap-4 mb-8 justify-center"
+          className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-8 justify-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -33,9 +33,9 @@ export default function AppPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base ${
                 activeTab === tab.id
-                  ? 'bg-neon-blue text-black neon-border'
+                  ? 'bg-neon-blue text-black'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
               }`}
             >
@@ -54,7 +54,7 @@ export default function AppPage() {
         >
           {activeTab === 'analyze' && (
             <>
-              <div className="grid lg:grid-cols-2 gap-8 mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
                 <ErrorInput onExplanation={setExplanation} />
                 <ErrorExplanation explanation={explanation} />
               </div>

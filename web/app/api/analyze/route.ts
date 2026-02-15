@@ -38,7 +38,7 @@ Respond with this exact JSON structure:
   "explanation": "A clear, plain English explanation of what's causing this error and why it happens",
   "solutions": [
     "First step to fix the issue",
-    "Second step to fix the issue",
+    "Second step to fix the issue", 
     "Third step to fix the issue"
   ],
   "fix": {
@@ -66,9 +66,8 @@ Remember: Respond ONLY with the JSON object, nothing else.`
 
     const data = await response.json()
     console.log('Gemini response:', JSON.stringify(data, null, 2))
-    
+
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || ''
-    
     if (!text) {
       console.error('No text in response:', data)
       return NextResponse.json(
@@ -78,7 +77,7 @@ Remember: Respond ONLY with the JSON object, nothing else.`
     }
 
     console.log('AI text response:', text)
-    
+
     // Try to parse JSON from response
     try {
       // Remove markdown code blocks if present

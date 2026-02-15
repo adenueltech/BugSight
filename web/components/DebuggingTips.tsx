@@ -45,38 +45,38 @@ const debuggingSteps = [
 export default function DebuggingTips() {
   return (
     <motion.div
-      className="bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-800"
+      className="bg-gray-900/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-800"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
     >
-      <h2 className="text-2xl font-bold mb-4 text-white flex items-center gap-2">
-        <Bug className="w-6 h-6 text-neon-blue" />
+      <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white flex items-center gap-2">
+        <Bug className="w-5 h-5 md:w-6 md:h-6 text-neon-blue" />
         Debugging Best Practices
       </h2>
       
-      <p className="text-gray-400 mb-6 text-sm">
+      <p className="text-gray-400 mb-4 md:mb-6 text-xs md:text-sm">
         Follow these engineering principles to debug effectively and efficiently.
       </p>
 
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         {debuggingSteps.map((step, idx) => (
           <motion.div
             key={idx}
-            className="flex gap-4 p-4 bg-black/30 rounded-lg border border-gray-800 hover:border-gray-700 transition-all"
+            className="flex gap-3 md:gap-4 p-3 md:p-4 bg-black/30 rounded-lg border border-gray-800 hover:border-gray-700 transition-all"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 + idx * 0.1 }}
             whileHover={{ scale: 1.02, x: 5 }}
           >
             <div className={`flex-shrink-0 ${step.color}`}>
-              <step.icon className="w-6 h-6" />
+              <step.icon className="w-5 h-5 md:w-6 md:h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-white mb-1">
+              <h3 className="font-semibold text-white mb-1 text-sm md:text-base">
                 {idx + 1}. {step.title}
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-xs md:text-sm text-gray-400">
                 {step.description}
               </p>
             </div>
@@ -85,12 +85,12 @@ export default function DebuggingTips() {
       </div>
 
       <motion.div
-        className="mt-6 p-4 bg-neon-blue/10 border border-neon-blue/30 rounded-lg"
+        className="mt-4 md:mt-6 p-3 md:p-4 bg-neon-blue/10 border border-neon-blue/30 rounded-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        <p className="text-sm text-gray-300">
+        <p className="text-xs md:text-sm text-gray-300">
           <span className="font-semibold text-neon-blue">Pro Tip:</span> Use the AI analyzer above to get instant explanations and fixes. But understanding the debugging process makes you a better engineer!
         </p>
       </motion.div>
